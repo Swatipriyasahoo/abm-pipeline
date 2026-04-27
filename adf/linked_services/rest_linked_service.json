@@ -1,1 +1,18 @@
-
+{
+  "name": "RestService",
+  "properties": {
+    "type": "RestService",
+    "typeProperties": {
+      "url": "https://api.example.com",
+      "enableServerCertificateValidation": true,
+      "authenticationType": "Anonymous"
+    },
+    "connectVia": {
+      "referenceName": "AutoResolveIntegrationRuntime",
+      "type": "IntegrationRuntimeReference"
+    },
+    "annotations": [
+      "Used for Demandbase, LinkedIn, Salesforce API ingestion"
+    ]
+  }
+}
