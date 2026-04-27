@@ -1,1 +1,35 @@
-
+{
+  "name": "Ingest_Demandbase_API",
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy_Demandbase_Data",
+        "type": "Copy",
+        "inputs": [
+          {
+            "referenceName": "RestDataset",
+            "type": "DatasetReference",
+            "parameters": {
+            "endpoint": "salesforce/opportunities"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "ADLS_Dataset",
+            "type": "DatasetReference"
+          }
+        ],
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET"
+          },
+          "sink": {
+            "type": "DelimitedTextSink"
+          }
+        }
+      }
+    ]
+  }
+}
