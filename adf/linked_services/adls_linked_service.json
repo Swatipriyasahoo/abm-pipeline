@@ -1,1 +1,16 @@
-
+{
+  "name": "AzureDataLakeStorage",
+  "properties": {
+    "type": "AzureBlobFS",
+    "typeProperties": {
+      "url": "https://yourstorageaccount.dfs.core.windows.net"
+    },
+    "connectVia": {
+      "referenceName": "AutoResolveIntegrationRuntime",
+      "type": "IntegrationRuntimeReference"
+    },
+    "annotations": [
+      "ADLS Gen2 used for Bronze layer storage"
+    ]
+  }
+}
