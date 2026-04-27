@@ -1,13 +1,26 @@
 {
-  "name": "AzureDataLakeStorage",
+  "name": "ADLS_Dataset",
   "properties": {
-    "type": "AzureBlobFS",
-    "typeProperties": {
-      "url": "https://project_storageaccount.dfs.core.windows.net"
+    "linkedServiceName": {
+      "referenceName": "AzureDataLakeStorage",
+      "type": "LinkedServiceReference"
     },
-    "connectVia": {
-      "referenceName": "AutoResolveIntegrationRuntime",
-      "type": "IntegrationRuntimeReference"
+    "parameters": {
+      "folderPath": {
+        "type": "String"
+      },
+      "fileName": {
+        "type": "String"
+      }
+    },
+    "type": "DelimitedText",
+    "typeProperties": {
+      "location": {
+        "type": "AzureBlobFSLocation",
+        "fileSystem": "bronze",
+        "folderPath": "@dataset().folderPath",
+        "fileName": "@dataset().fileName"
+      }
     }
   }
 }
