@@ -1,1 +1,18 @@
-
+{
+  "name": "RestDataset",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "RestService",
+      "type": "LinkedServiceReference"
+    },
+    "type": "RestResource",
+    "typeProperties": {
+      "relativeUrl": "@dataset().endpoint"
+    },
+    "parameters": {
+      "endpoint": {
+        "type": "String"
+      }
+    }
+  }
+}
